@@ -1,0 +1,49 @@
+{
+	"name": "MW_EXT_Grid",
+	"version": "1.0.0",
+	"author": [
+		"[https://kitsune.solar/ Kitsune Solar]",
+		"[https://metastore.pro/ METASTORE]",
+		"..."
+	],
+	"url": "https://metastore.pro/",
+	"descriptionmsg": "mw-ext-grid-desc",
+	"license-name": "[https://www.gnu.org/licenses/gpl-3.0.txt GPL-3.0]",
+	"type": "parserhook",
+	"require": {
+		"MediaWiki": ">= 1.30.0"
+	},
+	"AutoloadClasses": {
+		"MW_EXT_Grid": "MW_EXT_Grid.class.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"MW_EXT_Grid::onParserFirstCallInit"
+		],
+		"BeforePageDisplay": [
+			"MW_EXT_Grid::onBeforePageDisplay"
+		]
+	},
+	"MessagesDirs": {
+		"MW_EXT_Grid": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.mw.grid.styles": {
+			"styles": [
+				"styles/theme.css"
+			],
+			"position": "top",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "MW_EXT_Grid/modules"
+	},
+	"manifest_version": 2
+}
