@@ -1,9 +1,15 @@
 <?php
 
+namespace MediaWiki\Extension\MW_EXT_Grid;
+
+use OutputPage;
+use Parser;
+use PPFrame;
+use Skin;
+
 /**
  * Class MW_EXT_Grid
  * ------------------------------------------------------------------------------------------------------------------ */
-
 class MW_EXT_Grid {
 
 	/**
@@ -26,7 +32,7 @@ class MW_EXT_Grid {
 	 * @param Parser $parser
 	 *
 	 * @return bool
-	 * @throws MWException
+	 * @throws \MWException
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onParserFirstCallInit( Parser $parser ) {
@@ -146,7 +152,7 @@ class MW_EXT_Grid {
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
-		$out->addModuleStyles( array( 'ext.mw.grid.styles' ) );
+		$out->addModuleStyles( [ 'ext.mw.grid.styles' ] );
 
 		return true;
 	}

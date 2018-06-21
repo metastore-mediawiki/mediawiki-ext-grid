@@ -14,14 +14,14 @@
 		"MediaWiki": ">= 1.30.0"
 	},
 	"AutoloadClasses": {
-		"MW_EXT_Grid": "MW_EXT_Grid.class.php"
+		"MediaWiki\\Extension\\MW_EXT_Grid\\MW_EXT_Grid": "MW_EXT_Grid.class.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
-			"MW_EXT_Grid::onParserFirstCallInit"
+			"MediaWiki\\Extension\\MW_EXT_Grid\\MW_EXT_Grid::onParserFirstCallInit"
 		],
 		"BeforePageDisplay": [
-			"MW_EXT_Grid::onBeforePageDisplay"
+			"MediaWiki\\Extension\\MW_EXT_Grid\\MW_EXT_Grid::onBeforePageDisplay"
 		]
 	},
 	"MessagesDirs": {
