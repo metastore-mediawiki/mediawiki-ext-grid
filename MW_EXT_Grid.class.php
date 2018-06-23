@@ -3,25 +3,12 @@
 namespace MediaWiki\Extension\MW_EXT_Grid;
 
 use OutputPage, Parser, PPFrame, Skin;
+use MediaWiki\Extension\MW_EXT_Core\MW_EXT_Core;
 
 /**
  * Class MW_EXT_Grid
  * ------------------------------------------------------------------------------------------------------------------ */
 class MW_EXT_Grid {
-
-	/**
-	 * Clear DATA (escape html).
-	 *
-	 * @param $string
-	 *
-	 * @return string
-	 * -------------------------------------------------------------------------------------------------------------- */
-
-	private static function clearData( $string ) {
-		$outString = htmlspecialchars( trim( $string ), ENT_QUOTES );
-
-		return $outString;
-	}
 
 	/**
 	 * Register tag function.
@@ -53,11 +40,11 @@ class MW_EXT_Grid {
 
 	public static function onRenderGrid( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
-		$getStyle = self::clearData( $args['style'] ?? '' ?: '' );
+		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
 
 		// Argument: class.
-		$getClass = self::clearData( $args['class'] ?? '' ?: '' );
+		$getClass = MW_EXT_Core::outClear( $args['class'] ?? '' ?: '' );
 		$outClass = empty( $getClass ) ? '' : ' ' . $getClass;
 
 		// Get content.
@@ -86,11 +73,11 @@ class MW_EXT_Grid {
 
 	public static function onRenderRow( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
-		$getStyle = self::clearData( $args['style'] ?? '' ?: '' );
+		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
 
 		// Argument: class.
-		$getClass = self::clearData( $args['class'] ?? '' ?: '' );
+		$getClass = MW_EXT_Core::outClear( $args['class'] ?? '' ?: '' );
 		$outClass = empty( $getClass ) ? '' : ' ' . $getClass;
 
 		// Get content.
@@ -119,11 +106,11 @@ class MW_EXT_Grid {
 
 	public static function onRenderColumn( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
-		$getStyle = self::clearData( $args['style'] ?? '' ?: '' );
+		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
 
 		// Argument: class.
-		$getClass = self::clearData( $args['class'] ?? '' ?: '' );
+		$getClass = MW_EXT_Core::outClear( $args['class'] ?? '' ?: '' );
 		$outClass = empty( $getClass ) ? '' : ' ' . $getClass;
 
 		// Get content.
