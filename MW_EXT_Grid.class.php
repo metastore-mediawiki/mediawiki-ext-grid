@@ -20,9 +20,9 @@ class MW_EXT_Grid {
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook( 'grid', __CLASS__ . '::onRenderGrid' );
-		$parser->setHook( 'row', __CLASS__ . '::onRenderRow' );
-		$parser->setHook( 'column', __CLASS__ . '::onRenderColumn' );
+		$parser->setHook( 'grid', [ __CLASS__, 'onRenderGrid' ] );
+		$parser->setHook( 'row', [ __CLASS__, 'onRenderRow' ] );
+		$parser->setHook( 'column', [ __CLASS__, 'onRenderColumn' ] );
 
 		return true;
 	}
