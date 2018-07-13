@@ -7,7 +7,7 @@ use MediaWiki\Extension\MW_EXT_Core\MW_EXT_Core;
 
 /**
  * Class MW_EXT_Grid
- * ------------------------------------------------------------------------------------------------------------------ */
+ */
 class MW_EXT_Grid {
 
 	/**
@@ -17,8 +17,7 @@ class MW_EXT_Grid {
 	 *
 	 * @return bool
 	 * @throws \MWException
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setHook( 'grid', [ __CLASS__, 'onRenderGrid' ] );
 		$parser->setHook( 'row', [ __CLASS__, 'onRenderRow' ] );
@@ -36,8 +35,7 @@ class MW_EXT_Grid {
 	 * @param PPFrame $frame
 	 *
 	 * @return string
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onRenderGrid( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
 		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
@@ -69,8 +67,7 @@ class MW_EXT_Grid {
 	 * @param PPFrame $frame
 	 *
 	 * @return string
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onRenderRow( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
 		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
@@ -102,8 +99,7 @@ class MW_EXT_Grid {
 	 * @param PPFrame $frame
 	 *
 	 * @return string
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onRenderColumn( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
 		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
@@ -133,8 +129,7 @@ class MW_EXT_Grid {
 	 * @param Skin $skin
 	 *
 	 * @return bool
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		$out->addModuleStyles( [ 'ext.mw.grid.styles' ] );
 
