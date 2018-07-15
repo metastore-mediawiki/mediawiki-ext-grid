@@ -1,7 +1,7 @@
 {
 	"name": "metastore-mediawiki/mediawiki-ext-grid",
 	"type": "mediawiki-extension",
-	"description": "",
+	"description": "Интеграция системы CSS Grid.",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://metastore.pro/",
 	"keywords": [
@@ -25,11 +25,14 @@
 	},
 	"require": {
 		"php": ">=7.2",
-		"composer/installers": "1.*,>=1.0.1"
+		"composer/installers": "~1.0"
 	},
 	"autoload": {
 		"classmap": [
 			"MW_EXT_Grid.class.php"
 		]
+	},
+	"extra": {
+		"installer-name": "MW_EXT_Grid"
 	}
 }
