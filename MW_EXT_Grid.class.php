@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\MW_EXT_Grid;
 
 use OutputPage, Parser, PPFrame, Skin;
-use MediaWiki\Extension\MW_EXT_Core\MW_EXT_Core;
+use MediaWiki\Extension\MW_EXT_Kernel\MW_EXT_Kernel;
 
 /**
  * Class MW_EXT_Grid
@@ -38,11 +38,11 @@ class MW_EXT_Grid {
 	 */
 	public static function onRenderGrid( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
-		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
+		$getStyle = MW_EXT_Kernel::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
 
 		// Argument: class.
-		$getClass = MW_EXT_Core::outClear( $args['class'] ?? '' ?: '' );
+		$getClass = MW_EXT_Kernel::outClear( $args['class'] ?? '' ?: '' );
 		$outClass = empty( $getClass ) ? '' : ' ' . $getClass;
 
 		// Get content.
@@ -70,11 +70,11 @@ class MW_EXT_Grid {
 	 */
 	public static function onRenderRow( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
-		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
+		$getStyle = MW_EXT_Kernel::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
 
 		// Argument: class.
-		$getClass = MW_EXT_Core::outClear( $args['class'] ?? '' ?: '' );
+		$getClass = MW_EXT_Kernel::outClear( $args['class'] ?? '' ?: '' );
 		$outClass = empty( $getClass ) ? '' : ' ' . $getClass;
 
 		// Get content.
@@ -102,11 +102,11 @@ class MW_EXT_Grid {
 	 */
 	public static function onRenderColumn( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: style.
-		$getStyle = MW_EXT_Core::outClear( $args['style'] ?? '' ?: '' );
+		$getStyle = MW_EXT_Kernel::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
 
 		// Argument: class.
-		$getClass = MW_EXT_Core::outClear( $args['class'] ?? '' ?: '' );
+		$getClass = MW_EXT_Kernel::outClear( $args['class'] ?? '' ?: '' );
 		$outClass = empty( $getClass ) ? '' : ' ' . $getClass;
 
 		// Get content.
