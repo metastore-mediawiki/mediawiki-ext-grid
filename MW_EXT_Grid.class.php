@@ -29,13 +29,13 @@ class MW_EXT_Grid {
 	 * Render grid function.
 	 *
 	 * @param $input
-	 * @param array $args
 	 * @param Parser $parser
 	 * @param PPFrame $frame
+	 * @param array $args
 	 *
 	 * @return string
 	 */
-	public static function onRenderGrid( $input, $args = [], Parser $parser, PPFrame $frame ) {
+	public static function onRenderGrid( $input, Parser $parser, PPFrame $frame, $args = [] ) {
 		// Argument: style.
 		$getStyle = MW_EXT_Kernel::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
