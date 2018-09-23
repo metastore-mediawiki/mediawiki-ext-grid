@@ -29,13 +29,13 @@ class MW_EXT_Grid {
 	 * Render grid function.
 	 *
 	 * @param $input
+	 * @param array $args
 	 * @param Parser $parser
 	 * @param PPFrame $frame
-	 * @param array $args
 	 *
 	 * @return string
 	 */
-	public static function onRenderGrid( $input, Parser $parser, PPFrame $frame, $args = [] ) {
+	public static function onRenderGrid( $input, array $args, Parser $parser, PPFrame $frame ) {
 		// Argument: style.
 		$getStyle = MW_EXT_Kernel::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
@@ -67,7 +67,7 @@ class MW_EXT_Grid {
 	 *
 	 * @return string
 	 */
-	public static function onRenderRow( $input, $args = [], Parser $parser, PPFrame $frame ) {
+	public static function onRenderRow( $input, array $args, Parser $parser, PPFrame $frame ) {
 		// Argument: style.
 		$getStyle = MW_EXT_Kernel::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
@@ -99,7 +99,7 @@ class MW_EXT_Grid {
 	 *
 	 * @return string
 	 */
-	public static function onRenderColumn( $input, $args = [], Parser $parser, PPFrame $frame ) {
+	public static function onRenderColumn( $input, array $args, Parser $parser, PPFrame $frame ) {
 		// Argument: style.
 		$getStyle = MW_EXT_Kernel::outClear( $args['style'] ?? '' ?: '' );
 		$outStyle = empty( $getStyle ) ? '' : ' style="' . $getStyle . '"';
